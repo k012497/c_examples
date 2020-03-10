@@ -47,8 +47,8 @@ scanf("%d", &quit);
 if (quit == 1) continue;
 else 
 {
-printf("%d원을 넣어 주세요\n", PRICE);
-break;
+    printf("%d원을 넣어 주세요\n", PRICE);
+    break;
 }
 }
  
@@ -69,24 +69,24 @@ break;
  
 void select_menu (void)
 {
-quit = 0; //quit 초기화
+    quit = 0; //quit 초기화
  
-printf("┌───────────────────────────┐\n");
+    printf("┌───────────────────────────┐\n");
     printf("│                                                      │\n");
-printf("│                   1권에 5 0 0 0 원 !                 │\n");
+    printf("│                   1권에 5 0 0 0 원 !                 │\n");
     printf("│ 설렘자판기는 헌 책을 기부받아 운영되는 자판기입니다. │\n");
     printf("│         1권당 %d원이 헌책방으로 기부 됩니다.       │\n", DONATION);
-printf("│                                                      │\n");
+    printf("│                                                      │\n");
     printf("│======================설렘자판기======================│\n");
-printf("│                                                      │\n");
+    printf("│                                                      │\n");
     printf("│             ① 로맨스 ② 추리 ③ 지식/교양           │\n");
     printf("│              ④ 여행 ⑤ 자기계발 ⑥ 랜덤             │\n");
     printf("│                                                      │\n");
-printf("│                     ⓞ power off                     │\n");
-printf("│                   ※동전 사용 불가                   │\n");
-printf("│                                                      │\n");
+    printf("│                     ⓞ power off                     │\n");
+    printf("│                   ※동전 사용 불가                   │\n");
+    printf("│                                                      │\n");
     printf("└───────────────────────────┘\n");
-Sleep(1000);
+    Sleep(1000);
     
  
     //2. 장르를 확인하고 결정한다. 장르 번호를 입력받음
@@ -120,7 +120,7 @@ Sleep(1000);
         fflush(stdout);
         Sleep(1000);
         printf("··\n"); 
-fflush(stdout);
+        fflush(stdout);
         Sleep(1000);
         exit(1); 
     }
@@ -140,7 +140,7 @@ void input_money(void)
  
     for( ; ; )
     {
-printf("투입 금액 : ");
+        printf("투입 금액 : ");
         scanf("%d",&money);
         switch(money)
         {
@@ -165,7 +165,7 @@ void print_book (void)
     srand(time(NULL));
     printf("잠시만 기다려주세요 \n");
     Sleep(1000);
-SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 3);
+    SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 3);
     printf("┌───────────┐\n");
     printf("│                      │\n");
     if(genreNum == 6)
@@ -173,7 +173,7 @@ SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 3);
         genreNum = (rand()%5)+1; //랜덤을 택했을 경우 genreNum = (rand()%5)+1로 장르번호를 1~5로 바꾼 후 출력
     }
     printf("│%21s │\n", book[genreNum][rand()%(QUANTITY)]);
-printf("│              ───  │\n");
+    printf("│              ───  │\n");
     printf("│                      │\n");
     printf("│                      │\n");
     printf("│                      │\n");
@@ -182,7 +182,7 @@ printf("│              ───  │\n");
     printf("│                      │\n");
     printf("└───────────┘\n");
     totalMoney -= PRICE;
-SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 7);
+    SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 7);
     Sleep(1000);
  
     return ;
@@ -197,31 +197,31 @@ void print_change (void)
         printf("거스름돈 %5d원을 받아가세요.\n", totalMoney);
         Sleep(1000);
  
-SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 6);
+        SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 6);
         printf("┌───┐\n");
         printf("│%6d│\n", totalMoney);
         printf("└───┘\n");
-SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 7);
+        SetConsoleTextAttribute( GetStdHandle( STD_OUTPUT_HANDLE ), 7);
         printf("%d원이 기부되었습니다! 이용해주셔서 감사합니다 :) \n\n", DONATION);
-printf("잠시 후 처음 화면으로 돌아갑니다. ");
-printf("3.. ");
-Sleep(1000);
-printf("2.. ");
-Sleep(1000);
-printf("1.. \n");
-Sleep(1000);
+        printf("잠시 후 처음 화면으로 돌아갑니다. ");
+        printf("3.. ");
+        Sleep(1000);
+        printf("2.. ");
+        Sleep(1000);
+        printf("1.. \n");
+        Sleep(1000);
     }
  
     else
     {
         printf("%d원이 기부되었습니다! 이용해주셔서 감사합니다 :) \n\n", DONATION);
-printf("잠시 후 처음 화면으로 돌아갑니다. ");
-printf("3.. ");
-Sleep(1000);
-printf("2.. ");
-Sleep(1000);
-printf("1.. \n");
-Sleep(1000);
+        printf("잠시 후 처음 화면으로 돌아갑니다. ");
+        printf("3.. ");
+        Sleep(1000);
+        printf("2.. ");
+        Sleep(1000);
+        printf("1.. \n");
+        Sleep(1000);
     }
  
     return;
